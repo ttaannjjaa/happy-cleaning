@@ -1,16 +1,24 @@
 .Room {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.Room__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
-  padding: 12px;
+}
+
+.Room__heading {
+  font-size: 1.1em;
 }
 
 .Room__status {
   width: 20px;
   height: 20px;
-  border-radius: 100px;
-  background: grey;
+  border-radius: 50%;
+  border: none;
+  background: gray;
 }
 
 .Room__status--clean {
@@ -18,9 +26,5 @@
 }
 
 .Room__status--dirty {
-  background: red;
-}
-
-.TextDescription {
-  font-style: italic;
+  background: crimson;
 }
