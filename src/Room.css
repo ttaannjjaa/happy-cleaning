@@ -22,7 +22,7 @@
 }
 
 .Room__status--clean {
-  background: green;
+  background: yellowgreen;
 }
 
 .Room__status--dirty {
