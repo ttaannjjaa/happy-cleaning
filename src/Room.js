@@ -1,12 +1,7 @@
 import { useState } from 'react';
 import './Room.css';
 
-export default function Room({
-  text,
-  isClean,
-  description,
-  isDescriptionVisible,
-}) {
+export default function Room({ text, isClean, description, toggleStatus }) {
   const [isDescriptionVisible, setIsDescriptionsVisible] = useState(false);
 
   const statusClassName = isClean
@@ -20,7 +15,6 @@ export default function Room({
         <button onClick={toggleStatus} className={statusClassName}></button>
       </header>
       <p hidden={!isDescriptionVisible}>{description}</p>
-      <div className={statusClassName}></div>
     </section>
   );
 
