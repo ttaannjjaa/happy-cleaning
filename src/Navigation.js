@@ -1,19 +1,32 @@
 import './Navigation.css';
+import { useState } from 'react';
 
-export default function Navigation({ setCurrentPage, pressed }) {
-  const statusButtonClassName = pressed ? 'Nav__button active' : 'Nav__button';
+export default function Navigation({ setCurrentPage }) {
+  const [active, setActive] = useState(true);
+
+  const statusButtonClassName = active ? 'Nav__button active' : 'Nav__button';
+
+  const statusButtonClassName2 = !active ? 'Nav__button active' : 'Nav__button';
 
   return (
     <div className="Nav">
       <button
-        onClick={() => setCurrentPage('rooms')}
+        onClick={event => {
+          event.stopPropagation();
+          setCurrentPage('rooms');
+          setActive(!active);
+        }}
         className={statusButtonClassName}
       >
         Rooms
       </button>
       <button
-        onClick={() => setCurrentPage('flatmates')}
-        className={statusButtonClassName}
+        onClick={event => {
+          event.stopPropagation();
+          setCurrentPage('flatmates');
+          setActive(!active);
+        }}
+        className={statusButtonClassName2}
       >
         Flatmates
       </button>
